@@ -1,0 +1,26 @@
+{
+  "name": "EmployeeTracker",
+  "version": "1.0.0",
+  "description": "## Licensing:   [![license](https://img.shields.io/badge/license-ISC-yellow)](https://shields.io)",
+  "main": "index.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "mysql2": "^2.2.5",
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcysko/EmployeeTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcysko/EmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/marcysko/EmployeeTracker#readme"
+}
