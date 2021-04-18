@@ -4,17 +4,17 @@ CREATE DATABASE employeeTracker_db;
 USE employeeTracker_db;
 
 CREATE TABLE department(
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  dept_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   dept_name VARCHAR(30)
 );
 CREATE TABLE roles(
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  roles_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
-  salary DECIMAL(5,2) NOT NULL,
-  department_id INT REFERENCES department(department_id)
+  salary DECIMAL(10,2) NOT NULL,
+  dept_id INT REFERENCES department(dept_id)
 );
 CREATE TABLE employee(
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  emp_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   role_id INT NOT NULL REFERENCES role(role_id),
