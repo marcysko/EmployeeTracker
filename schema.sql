@@ -17,6 +17,6 @@ CREATE TABLE employee(
   emp_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
-  role_id INT NOT NULL REFERENCES role(role_id),
+  roles_id INT NOT NULL REFERENCES roles(roles_id),
   manager_id INT REFERENCES employee(emp_id)
 );
