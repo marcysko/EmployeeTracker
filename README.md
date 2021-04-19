@@ -4,7 +4,9 @@
   [![license](https://img.shields.io/badge/license-ISC-yellow)](https://shields.io)
 
 ## Description
-Built a command-line application to manage a company's employee database. 
+Built a command-line application to manage a company's employee database. The client is a business owner
+and she wants to be able to view and manage the departments, roles, and employees in her company
+to organize and plan her business operations.
 ## Website
 
 ## Table of Contents
