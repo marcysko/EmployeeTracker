@@ -1,50 +1,90 @@
--- DEPARTMENT -----
-INSERT INTO department (dept_name)
-VALUES 
-  ("Customer Service"),
-  ("IT"),
-  ("Marketing"),
-  ("Business Travel"),
-  ("Human Resources"),
-  ("Financial");
+USE employeeTrack_DB;
 
--- EMPLOYEE ROLES -------
-INSERT INTO roles (title, salary, dept_id) 
-VALUES
-  ("Customer Service Agent",35000,1),
-  ("Client Care Manager",71000,1),
-  ("Director of client services",125000,1),
-  ("Business Analyst",68000,2),
-  ("Network Engineer",71000,2,
-  ("Help Desk Agent",38000,2),
-  ("Chief Marketing Officer",125000,3),
-  ("Web Marketing Specialist",49000,3),
-  ("Travel Coordinator",35500,4),
-  ("Business Travel Manager",77000,4),
-  ("Project Analyst",44000,4),
-  ("Human Resources Administrator",65000,5),
-  ("Recruiter",46800,5),
-  ("Trainer",47000,5),
-  ("Chief Financial Officer",182000,6),
-  ("Budget Analyst",67900,6),
-  ("Financial Advisor",42300,6);
+-- Department -----
+INSERT INTO department (dept_id , dept_name)
+VALUES (1, "Customer Service");
+
+INSERT INTO department (dept_id , dept_name)
+VALUES (2, "IT");
+
+INSERT INTO department (dept_id , dept_name)
+VALUES (3, "Marketing");
+
+INSERT INTO department (dept_id , dept_name)
+VALUES (4, "Business Travel");
+
+INSERT INTO department (dept_id , dept_name)
+VALUES (5, "HR");
+
+INSERT INTO department (dept_id , dept_name)
+VALUES (6, "Financial");
+
+-- Roles ---
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (1, "Customer Service Agent", 30000, 1);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (2, "Client Care Manager", 71000, 1);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (3, "Business Analyst", 68000, 2);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (4, "Network Engineer", 71000, 2);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (5, "Web Marketing Specialist", 49000, 3);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (6, "Chief Marketing Officer", 125000, 3);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (7, "Business Travel Manager", 77500, 4);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (8, "Travel Coordinator", 35500, 4);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (9, "Human Resources Administrator", 65000, 5);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (10, "Recruiter", 46800, 5);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (11, "Chief Financial Officer", 182000, 6);
+
+INSERT INTO role (role_id, title, salary, dept_id)
+VALUES (12, "Budget Analyst", 67900, 6);
 
 
-  -- EMPLOYEES ------
+-- Employees ------
 
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("No", "Manager",0);
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("Frostee", "Rucker",2);
-INSERT INTO employee (first_name, last_name, roles_id, manager_id)
-VALUES ("HaHa", "Dix",1,2);
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("Maria", "Gonzales",6);
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("Babs", "Freudenmensch",12);
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("Ingrid", "Chin",14);
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("Carlotta", "Greenleaf",16);
-INSERT INTO employee (first_name, last_name, roles_id)
-VALUES ("Mohammed", "Olleeen",20);
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (1, "Frostee", "Rucker", 3, null);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (2, "HaHa", "Dix", 2, null);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (3, "Maria", "Gonzales", 6, null);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (4, "Babs", "Freudenmensch", 10, null);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (5, "Ingrid", "Chin", 7, null);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (6, "Carlotta", "Greenleaf", 4, 1);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (7, "Mohammed", "Olleeen", 8, 5);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (8, "Donald", "Trumpet", 1, 2);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (9, "Bobby", "Dimitriov", 9, 4);
+
+INSERT INTO employee (emp_id, first_name, last_name, role_id, manager_id)
+VALUES (10, "Carol", "Lovejoy", 5, 3);
