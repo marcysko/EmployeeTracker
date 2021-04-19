@@ -24,13 +24,15 @@ to organize and plan her business operations.
 ISC
 ### Technology
 
-- JavaScript 
+- JavaScript
+- JQuery 
 - Node.js 
 - MySQL 
 - Inquirer
 - GitHub 
 
 ### Tests
+* No tests were required for this application
 
 ## Questions
 * For questions, please reach out to me at marciasko@icloud.com
