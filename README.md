@@ -7,7 +7,7 @@
 Built a command-line application to manage a company's employee database. The client is a business owner
 and she wants to be able to view and manage the departments, roles, and employees in her company
 to organize and plan her business operations.
-## Website
+## Video Link
 
 ## Table of Contents
  
