@@ -23,11 +23,8 @@ to organize and plan her business operations.
 ### License
 ISC
 ### Technology
-- HTML 
-- CSS 
+
 - JavaScript 
-- jQuery 
-- JSON 
 - Node.js 
 - MySQL 
 - Inquirer
