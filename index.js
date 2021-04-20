@@ -42,7 +42,7 @@ connection.connect(function (err) {
   init();
 });
 
-// Offer main menu then prompt next function based on response
+// Offer start menu then prompt next function based on response
 function init() {
   inquirer.prompt(startMenu).then((response) => {
     switch (response.firstOption) {
@@ -216,7 +216,7 @@ function role() {
         let deptID;
         for (let d = 0; d < res.length; d++) {
           if (res[d].department_name == answer.departmentName) {
-            deptID = res[d].department_id;
+            deptID = res[d].dept_id;
           }
         }
        
@@ -225,7 +225,7 @@ function role() {
           {
             title: answer.title,
             salary: answer.salary,
-            department_id: deptID,
+            dept_id: deptID,
           },
           function (err) {
             if (err) throw err;
@@ -250,7 +250,7 @@ function department() {
       connection.query(
         "INSERT INTO department SET ?",
         {
-          department_name: answer.department,
+          dept_name: answer.department,
         },
         function (err) {
           if (err) throw err;
