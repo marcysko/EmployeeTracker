@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS employeeTracker_db;
-CREATE DATABASE employeeTracker_db;
+DROP DATABASE IF EXISTS employeeTrack_DB;
+CREATE DATABASE employeeTrack_DB;
 
-USE employeeTracker_db;
+USE employeeTrack_DB;
 
 CREATE TABLE department(
   dept_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   dept_name VARCHAR(30)
 );
-CREATE TABLE role (
+CREATE TABLE role(
   role_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
   salary DECIMAL(10,2) NOT NULL,

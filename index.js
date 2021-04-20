@@ -273,3 +273,98 @@ function viewByDepartment() {
     }
   );
 }
+// View Employees by role
+function viewByRole() {
+  connection.query(
+    `SELECT employee.emp_id, employee.first_name, employee.last_name, role.title, role.salary, department.dept_name FROM employee 
+    LEFT JOIN role ON employee.role_id = role.role_id
+    LEFT JOIN department ON role.dept_id = department.dept_id 
+    ORDER BY role.title`,
+    function (err, data) {
+      if (err) throw err;
+      console.table(data);
+      init();
+    }
+  );
+}
+// View all roles
+function viewRoles() {
+  connection.query(`SELECT * FROM role`, function (err, data) {
+    if (err) throw err;
+    console.table(data);
+    init();
+  });
+}
+// View all departments
+function viewDepartments() {
+  connection.query(`SELECT * FROM department`, function (err, data) {
+    if (err) throw err;
+    console.table(data);
+    init();
+  });
+}
+// View all employees
+function viewEmployees() {
+  connection.query(
+    `SELECT employee.emp_id, employee.first_name, employee.last_name, role.title,
+  department.dept_name AS department,role.salary,CONCAT(a.first_name, " ", a.last_name) AS manager
+  FROM employee
+  LEFT JOIN role ON employee.role_id = role.role_id
+  LEFT JOIN department ON role.dept_id = department.dept_id
+  LEFT JOIN employee a ON a.emp_id = employee.manager_id`,
+    function (err, data) {
+      if (err) throw err;
+      console.table(data);
+      init();
+    }
+  );
+}
+
+// Update Employee
+function updateEmployee() {
+  connection.query(
+    `SELECT concat(employee.first_name, ' ' ,  employee.last_name) AS Name FROM employee`,
+    function (err, employees) {
+      if (err) throw err;
+      emplArr = [];
+      for (i = 0; i < employees.length; i++) {
+        emplArr.push(employees[i].Name);
+      }
+      connection.query("SELECT * FROM role", function (err, res2) {
+        if (err) throw err;
+        inquirer
+          .prompt([
+            {
+              name: "employeeChoice",
+              type: "list",
+              message: "Which employee would you like to update?",
+              choices: emplArr,
+            },
+            {
+              name: "roleChoice",
+              type: "list",
+              message: "What is the employee's new role?",
+              choices: roleArr,
+            },
+          ])
+          .then(function (answer) {
+            let roleID;
+            for (let r = 0; r < res2.length; r++) {
+              if (res2[r].title == answer.roleChoice) {
+                roleID = res2[r].role_id;
+              }
+            }
+            // when finished prompting, update the db with that info
+            connection.query(
+              `UPDATE employee SET role_id = ? WHERE emp_id = (SELECT emp_id FROM(SELECT emp_id FROM employee WHERE CONCAT(first_name," ",last_name) = ?)AS NAME)`,
+              [roleID, answer.employeeChoice],
+              function (err) {
+                if (err) throw err;
+              }
+            );
+            init();
+          });
+      });
+    }
+  );
+}
