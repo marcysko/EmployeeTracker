@@ -8,7 +8,7 @@ Built a command-line application to manage a company's employee database. The cl
 and she wants to be able to view and manage the departments, roles, and employees in her company
 to organize and plan her business operations.
 ## Video Link
-https://bit.ly/3sMBX98
+https://drive.google.com/file/d/1bOmjvRELBhMGPXhStd8jgv07myQNvIuU/view
 
 ## Table of Contents
  
