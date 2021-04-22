@@ -10,7 +10,7 @@ to organize and plan her business operations.
 ## Video Link
 https://drive.google.com/file/d/1bOmjvRELBhMGPXhStd8jgv07myQNvIuU/view
 
-![Untitled_ Apr 22, 2021 10_16 AM (1)](https://user-images.githubusercontent.com/75454722/115786802-25c3f600-a376-11eb-95f0-4194b226baef.gif)
+![Untitled_ Apr 22, 2021 10_16 AM (1)](https://gph.is/g/aR8xAj6)
 
 ## Table of Contents
  
